@@ -53,9 +53,11 @@ public class Main {
 		if(basicPay <= 1500) {
 			contribPagibig = basicPay * 0.01;
 		}
+		
 		else if (basicPay <= 5000){
 			contribPagibig = basicPay * 0.02;
 		}
+		
 		else {
 			contribPagibig = 100;
 		}
@@ -64,9 +66,11 @@ public class Main {
 		if(basicPay <=1000) {
 			contribPhilhealth = 150;
 		}
+		
 		else if (basicPay <=60000) {
 			contribPhilhealth = basicPay * 0.015;
 		}
+		
 		else {
 			contribPhilhealth = 900;
 		}
@@ -75,9 +79,11 @@ public class Main {
 		if (basicPay <= 3250) {
 			contribSSS = 135;
 		} 
+		
 		else if (basicPay >= 24750) {
 			contribSSS = 1125;
 		} 
+		
 		else {
 			contribSSS = Math.ceil((basicPay - 3250) / 500) * 22.5 + 135;
 		}
@@ -99,23 +105,23 @@ public class Main {
 		}
 			
 		else if (basicPay <=q) {
-			withholdingTax = (basicPay - p) * 0.20;
+			withholdingTax = (taxableIncome - p) * 0.20;
 		}
 			
 		else if (basicPay <=r) {
-			withholdingTax = ((basicPay - q) * 0.25) + 2500;
+			withholdingTax = ((taxableIncome - q) * 0.25) + 2500;
 		}
 			
 		else if (basicPay <=s) {
-			withholdingTax = ((basicPay - r) * 0.30) + 10833;
+			withholdingTax = ((taxableIncome - r) * 0.30) + 10833;
 		}
 			
 		else if (basicPay <=t) {
-			withholdingTax = ((basicPay - s) * 0.32) + 40833.33;
+			withholdingTax = ((taxableIncome - s) * 0.32) + 40833.33;
 		}
 			
 		else {
-			withholdingTax = ((basicPay - t) * 0.35) + 200833.33;
+			withholdingTax = ((taxableIncome - t) * 0.35) + 200833.33;
 		}
 			
 		//Net Salary Computation
@@ -126,7 +132,6 @@ public class Main {
 		myArea.setText(
 			"\tMotorPH\n\t PAYSLIP\n\n=============================" +
 			"\nEmpID:\t\t" + employeeId +
-			
 			"\nEmpName:\t\t" + name +
 			"\nEmpPosition:\t\t" + position +
 			"\nHourlyRate:\t\t" + hourlyRate +
